@@ -57,17 +57,21 @@ d = input('[n] North [s] South [e] East [w] West [q] Quit\n')
 # Game loop from rock paper
 while not d == 'q':
     if d == 'n':
-        new_player.current_room == new_player.current_room.n_to
+        if new_player.current_room.n_to is not None:
+            new_player.current_room = new_player.current_room.n_to
         print("im in north")
     elif d == 's':
-        new_player.current_room == new_player.current_room.s_to
-        print("im in south")
+        if new_player.current_room.s_to is not None:
+            new_player.current_room = new_player.current_room.s_to
+            print("im in south")
     elif d == 'e':
-        new_player.current_room == new_player.current_room.e_to
-        print("im in east")
+         if new_player.current_room.e_to is not None:
+            new_player.current_room = new_player.current_room.e_to
+            print("im in east")
     elif d == 'w':
-        new_player.current_room == new_player.current_room.w_to
-        print("im in west")
+        if new_player.current_room.w_to is not None:
+           new_player.current_room = new_player.current_room.w_to
+           print("im in west")
     else:
         print('invalid selection')
     new_player.print_current_room()
